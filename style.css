@@ -18,4 +18,27 @@ body {
 
 .container {
   padding: 20px 70px;
+  /* color: #fff; */
+}
+
+.current-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.date-container {
+  font-weight: 100;
+}
+
+.date-container .time {
+  font-size: 70px;
+}
+
+.date-container #am-pm {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.date-container .date {
 }
