@@ -18,7 +18,7 @@ body {
 
 .container {
   padding: 20px 70px;
-  /* color: #fff; */
+  color: #fff;
 }
 
 .current-info {
@@ -41,4 +41,24 @@ body {
 }
 
 .date-container .date {
+  font-size: 30px;
+}
+
+.place-conteiner {
+  text-align: end;
+}
+
+.place-conteiner .time-zone {
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.place-conteiner .country {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.current-info .others {
+  display: flex;
+  flex-direction: column;
 }
