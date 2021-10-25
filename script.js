@@ -8,4 +8,6 @@ const currentTempEl = document.getElementById("current-temp");
 
 setInterval(() => {
   const time = new Date();
+  const month = time.getMonth();
+  const date = time.getDate();
 }, 1000);
