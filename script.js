@@ -6,6 +6,16 @@ const countryEl = document.getElementById("country");
 const weatherForecastEl = document.getElementById("weather-forecast");
 const currentTempEl = document.getElementById("current-temp");
 
+const day = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
 setInterval(() => {
   const time = new Date();
   const month = time.getMonth();
@@ -17,4 +27,4 @@ setInterval(() => {
   const ampm = hour >= 12 ? "PM" : "AM";
 
   timeEl.innerHTML = `${hoursIn12HrFormat}:${minutes} <span id="am-pm">${ampm}</span>`;
-}, 1000);
+});
