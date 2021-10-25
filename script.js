@@ -14,4 +14,5 @@ setInterval(() => {
   const hour = time.getHours();
   const hoursIn12HrFormat = hour >= 13 ? hour % 12 : hour;
   const minutes = time.getMinutes();
+  const ampm = hour >= 12 ? "PM" : "AM";
 }, 1000);
