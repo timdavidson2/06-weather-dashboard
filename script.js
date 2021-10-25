@@ -10,4 +10,5 @@ setInterval(() => {
   const time = new Date();
   const month = time.getMonth();
   const date = time.getDate();
+  const day = time.getDay();
 }, 1000);
