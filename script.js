@@ -16,6 +16,21 @@ const day = [
   "Saturday",
 ];
 
+const month = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 setInterval(() => {
   const time = new Date();
   const month = time.getMonth();
