@@ -5,3 +5,7 @@ const timeZoneEl = document.getElementById("time-zone");
 const countryEl = document.getElementById("country");
 const weatherForecastEl = document.getElementById("weather-forecast");
 const currentTempEl = document.getElementById("current-temp");
+
+setInterval(() => {
+  const time = new Date();
+}, 1000);
