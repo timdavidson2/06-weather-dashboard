@@ -15,4 +15,6 @@ setInterval(() => {
   const hoursIn12HrFormat = hour >= 13 ? hour % 12 : hour;
   const minutes = time.getMinutes();
   const ampm = hour >= 12 ? "PM" : "AM";
+
+  timeEl.innerHTML = `${hoursIn12HrFormat}:${minutes} <span id="am-pm">${ampm}</span>`;
 }, 1000);
