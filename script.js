@@ -168,7 +168,7 @@ function displayHistory(searchHistory) {
 
     listItem.appendChild(historyItem);
     listItem.classList.add("list-group-item");
-    historyItem.classList.add("btn-outline-secondary");
+    historyItem.classList.add("btn-outline-primary");
     historyItem.classList.add("btn");
     historyItem.classList.add("btn-wide");
     historyItem.classList.add("historyBtn");
