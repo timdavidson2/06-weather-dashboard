@@ -1,4 +1,4 @@
-# 06-Server-Side-APIs-Weather-Dashboard
+# Weather-Dashboard
 
 ## A Weather Dashboard
 
@@ -11,4 +11,5 @@
 ![screenshot of weather app](./assets/images/weatherApp.png)
 
 - Below is a link to the site:
+
 <https://timdavidson2.github.io/06-weather-dashboard/>

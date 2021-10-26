@@ -1,3 +1,9 @@
+body {
+  background-image: url(./images/backgroundImage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h1 {
   color: white;
   background: rgb(2, 0, 36);
@@ -35,7 +41,7 @@ li {
 }
 
 .dayCard {
-  background: darkcyan;
+  background: rgba(192, 192, 216, 0.816);
   margin: 15px;
   color: white;
   padding: 10px;
