@@ -1,107 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Weather App</title>
 	<link rel="stylesheet" href="style.css">
-	<title>Weather Dashboard</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
-	<!-- container for entire app -->
+	<!-- Title -->
+	<h1 class="display-1 text-center fw-bold ">Weather Dashboard</h1>
+
 	<div class="container">
-		<!-- date and time -->
-		<div class="current-info">
-			<!-- main date container-->
-			<div div class="date-container">
-				<!-- main time -->
-				<div class="time" id="time">
-					12:30 <span id="am-pm">PM</span>
+		<div class="row">
+			<div class="col-sm-3">
+				<!-- Search form -->
+				<div class="input-group mb-3">
+					<input type="text" id="cityInput" class="form-control" placeholder="City Name" name="cityInput"
+						aria-label="Recipient's username" aria-describedby="button-addon2">
+					<button class="btn btn-outline-secondary" id="searchBtn" type="button">Search</button>
 				</div>
-				<!-- main date ie Monday May 24 -->
-				<div class="date" id="date">
-					Monday, October 25
-				</div>
-				<!-- box for weather items such as humidity, wind speed stc. -->
-				<div class="others" id="current-weather-items">
-					<!-- holder for humidity -->
-					<div class="weather-item">
-						<div>Humidity</div>
-						<div>95.2%</div>
-					</div>
-					<!-- barometric pressure -->
-					<div class="weather-item">
-						<div>Pressure</div>
-						<div>700</div>
-					</div>
-					<!-- wind speed -->
-					<div class="weather-item">
-						<div>Wind Speed</div>
-						<div>25</div>
+
+				<!-- History List -->
+				<hr>
+				<ul id="historyList" class="list-group text-center"></ul>
+			</div>
+			<div class="col-sm-9">
+				<div class="row">
+
+					<!-- Current Day Forecast-->
+					<div id="currentDay" class="col-8 col-sm-12">
+						<h2>Current Day Forecast</h2>
+						<h3><span id="nameDate"></span></h3>
+						<p>Temp: <span id="displayTemp"></span> °F</p>
+						<p>Humidity: <span id="displayHumid"></span> %</p>
+						<p>UV Index: <span id="displayUV"></span></p>
+						<p>Wind: <span id="displayWind"></span> MPH</p>
 					</div>
 				</div>
-			</div>
 
-			<!-- Continent and country -->
-			<div class="place-container">
-				<div class="time-zone" id="time-zone">North America</div>
-				<div class="country" id="country">USA</div>
-			</div>
-
-		</div>
-
-
-	</div>
-	</div>
-	<!-- holder of future forecast information -->
-	<div class="future-forecast">
-		<div class="today" id="current-temp">
-			<img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-			<div class="others">
-				<div class="day">Monday</div>
-				<div class="temp">Night - 68&#176; F</div>
-				<div class="temp">Day - 72&#176; F</div>
-			</div>
-		</div>
-		<!-- remaining days of the week -->
-		<div class="weather-forecast" id="weather-forecast">
-			<div class="weather-forecast-item">
-				<div class="day">Tue</div>
-				<img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-				<div class="temp">Night - 68&#176; F</div>
-				<div class="temp">Day - 72&#176; F</div>
-			</div>
-			<div class="weather-forecast-item">
-				<div class="day">Wed</div>
-				<img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-				<div class="temp">Night - 68&#176; F</div>
-				<div class="temp">Day - 72&#176; F</div>
-			</div>
-			<div class="weather-forecast-item">
-				<div class="day">Thu</div>
-				<img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-				<div class="temp">Night - 68&#176; F</div>
-				<div class="temp">Day - 72&#176; F</div>
-			</div>
-			<div class="weather-forecast-item">
-				<div class="day">Fri</div>
-				<img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-				<div class="temp">Night - 68&#176; F</div>
-				<div class="temp">Day - 72&#176; F</div>
-			</div>
-			<div class="weather-forecast-item">
-				<div class="day">Sat</div>
-				<img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-				<div class="temp">Night - 68&#176; F</div>
-				<div class="temp">Day - 72&#176; F</div>
+				<!-- Five Day Forecast-->
+				<div id="fiveForecast" class="row">
+					<div class="col-8 col-sm-12">
+						<h2>5-Day Forecast</h2>
+						<ul id="forecastList" class="list-group list-group-horizontal">
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- link to javascript -->
-	<script src="./script.js"></script>
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="script.js"></script>
 </body>
 
 </html>
