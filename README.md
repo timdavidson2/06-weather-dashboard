@@ -8,7 +8,7 @@
 
 - Below is a screen shot of the weather dashboard:
 
-![screenshot of weather app](./assets/images/weatherApp.png)
+![screenshot of weather app](./images/weatherApp.png)
 
 - Below is a link to the site:
 
