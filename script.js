@@ -32,14 +32,17 @@ const month = [
 ];
 
 setInterval(() => {
-  const time = new Date();
-  const month = time.getMonth();
-  const date = time.getDate();
-  const day = time.getDay();
-  const hour = time.getHours();
+  let time = new Date();
+  let month = time.getMonth() + 1;
+  let date = time.getDate();
+  let day = time.getDay();
+  let hour = time.getHours();
+  let year = time.getFullYear();
   const hoursIn12HrFormat = hour >= 13 ? hour % 12 : hour;
-  const minutes = time.getMinutes();
+  let minutes = time.getMinutes();
   const ampm = hour >= 12 ? "PM" : "AM";
 
   timeEl.innerHTML = `${hoursIn12HrFormat}:${minutes} <span id="am-pm">${ampm}</span>`;
+
+  dateEl.innerHTML = `${month}/${date}/${year} `;
 });
